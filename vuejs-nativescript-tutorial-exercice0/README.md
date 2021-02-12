@@ -4,6 +4,8 @@ Cet exercice de préparation de son environnement de test détaille l'installati
 
 Par ailleurs, cet exercice détaille en fin d'exercice l'installation et la configuration de l'écosystème JavaScript nécessaire pour utiliser [NativeScript](https://nativescript.org/) avec [Vue.js](https://vuejs.org/).
 
+Pour cette préparation nous utiliserons exclusivement la ligne de commande. Les avantages sont multiples. Tout d'abord, c'est maîtriser l'installation sans passer par un outil graphique qui cache toutes les étapes. Ensuite, un éditeur graphique spécialisé comme [Android Studio](https://developer.android.com/studio) n'est utile que si vous développez avec le langage cible (par exemple Java ou Kotlin pour [Android](https://www.android.com)). En effet, dans notre cas, nous utiliserons [Visual Studio Code](https://code.visualstudio.com/) pour l'édition de nos codes JavaScript. Enfin, l'installation basée sur la ligne de commande permet d'automatiser certaines procédures, ce qui n'est pas le cas avec un éditeur graphique.
+
 Dans la suite de cet exercice toutes les manipulations seront faites depuis macOS.
 
 ## But
@@ -16,15 +18,15 @@ Dans la suite de cet exercice toutes les manipulations seront faites depuis macO
 
 ## Étapes à suivre pour l'environnement Android
 
-Les étapes suivantes montrent comment installer le SDK [Android](https://www.android.com) sans passer par [Android Studio](https://developer.android.com/studio). Nous utiliserons les outils en ligne de commande nommés « Command Line Tools » qui fournissent l'outil **sdkmanager** pour télécharger la bonne version du SDK. Les avantages de cette approche sont multiples. Tout d'abord, c'est maîtriser l'installation sans passer par un outil graphique qui cache toutes les étapes. Ensuite, [Android Studio](https://developer.android.com/studio) n'est utile que si vous développez avec le langage Java et [Android](https://www.android.com). En effet, dans notre cas, nous utiliserons [Visual Studio Code](https://code.visualstudio.com/) pour l'édition de nos codes JavaScript. Enfin, l'installation basée sur la ligne de commande permet d'automatiser certaines procédures, ce qui n'est pas le cas avec l'outil graphique [Android Studio](https://developer.android.com/studio).
+Les étapes suivantes montrent comment installer le SDK [Android](https://www.android.com) sans passer par [Android Studio](https://developer.android.com/studio). Nous utiliserons les outils en ligne de commande nommés « Command Line Tools » qui fournissent l'outil **sdkmanager** pour télécharger la bonne version du SDK. 
 
-Le SDK de la plateforme [Android](https://www.android.com) est généralement stocké dans le répertoire utilisateur et ce chemin doit être déclaré dans la variable d'environnement `ANDROID_SDK_ROOT`. Les différentes possibilité sont les suivantes.
+Le SDK de la plateforme [Android](https://www.android.com) est généralement stocké dans le répertoire utilisateur et ce chemin doit être déclaré dans la variable d'environnement `ANDROID_SDK_ROOT`. Les différentes possibilités sont les suivantes.
 
-* Mac : _/Users/<user>/Library/Android/sdk_
-* Windows : _C:\Users\<user>\AppData\Local\Android\Sdk_
-* Linux : _/home/<user>/Android/Sdk_
+* Mac : _/Users/\<user\>/Library/Android/sdk_
+* Windows : _C:\Users\\<user\>\AppData\Local\Android\Sdk_
+* Linux : _/home/\<user\>/Android/Sdk_
 
-Comme mes expérimentations se feront sous macOS, j'utiliserai le répertoire suivant _/Users/<user>/Library/Android/sdk_. Àdapter ce chemin en fonction de votre système d'exploitation.
+Comme mes expérimentations se feront sous macOS, j'utiliserai le répertoire suivant _/Users/\<user\>/Library/Android/sdk_. Adapter ce chemin en fonction de votre système d'exploitation.
 
 * Ouvrir un terminal, créer le répertoire du SDK et définir la variable d'environnement `ANDROID_SDK_ROOT` via les lignes de commande suivantes.
 
@@ -34,9 +36,9 @@ $ export ANDROID_SDK_ROOT=/Users/<user>/Library/Android/sdk
 $ export ANDROID_HOME=ANDROID_SDK_ROOT
 ```
 
-La variable `ANDROID_HOME` est normalement deprecated, elle était antérieure à `ANDROID_SDK_ROOT`. Il est quand même préférable de l'initialiser.
+La variable `ANDROID_HOME` est normalement *deprecated*, elle était antérieure à `ANDROID_SDK_ROOT`. Il est quand même préférable de l'initialiser.
 
-* Saisir les commandes suivantes pour télécharger les « Command Line Tools » et décompresser l'archive dans le répertoire `ANDROID_SDK_ROOT` (la version téléchargée est 6858069. Si besoin les dernières versions sont disponibles depuis cette page https://developer.android.com/studio).
+* Saisir les commandes suivantes pour télécharger les « Command Line Tools » et décompresser l'archive dans le répertoire `ANDROID_SDK_ROOT` (la version téléchargée est 6858069. Si besoin, les dernières versions sont disponibles depuis cette page https://developer.android.com/studio).
 
 ```console
 $ wget https://dl.google.com/android/repository/commandlinetools-mac-6858069_latest.zip -O $ANDROID_SDK_ROOT/clt.zip
@@ -58,7 +60,7 @@ $ sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "platform-tools" "extras;g
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 ```
 
-Nous ajouter les différents outils disponibles dans les répertoires _platform-tools_ et _emulator_ en modifiant la variable d'environnement `PATH`.
+Nous donnons accès aux différents outils disponibles dans les répertoires _platform-tools_ et _emulator_ en modifiant la variable d'environnement `PATH`.
 
 Le résultat après cette étape devra être le suivant :
 
@@ -73,7 +75,7 @@ ls $ANDROID_SDK_ROOT
 └── platform-tools
 ```
 
-À cette étape, les outils du SDK Android sont prêts. Il ne reste plus qu'à préciser la version de l'API Android souhaitée et **sdkmanager** se chargera de le télécharger et de déposer les fichiers dans le répertoire `ANDROID_SDK_ROOT`. Nous donnons ci-dessous un tableau donnant la correspondance entre le nom de code, la version Android et la version de l'API. Ces trois informations sont différentes.
+À cette étape, les outils du SDK [Android](https://www.android.com) sont prêts. Il ne reste plus qu'à préciser la version de l'API [Android](https://www.android.com) souhaitée et **sdkmanager** se chargera de le télécharger et de déposer les fichiers dans le répertoire `ANDROID_SDK_ROOT`. Nous donnons ci-dessous un tableau donnant la correspondance entre le nom de code, la version [Android](https://www.android.com) et la version de l'API. Ces trois informations sont différentes.
 
 Nom | Version | Version API
 :-: | :-: | :-:
@@ -88,13 +90,13 @@ Marshmallow | 6.0 | Android-23
 Lollipop | 5.1 | Android-22
 Lollipop | 5.0 | Android-21
 
-Dans la suite, nous téléchargerons le nécessaire pour compiler une application Android et créer un périphérique virtuel basé sur la version 11 correspondant au niveau de l'API intitulé `Android 30`. Pour réaliser cela, il faudra télécharger trois contenus qui sont :
+Dans la suite, nous téléchargerons le nécessaire pour compiler une application [Android](https://www.android.com) et créer un périphérique virtuel basé sur la version 11 correspondant au niveau de l'API intitulé `Android 30`. Pour réaliser cela, il faudra télécharger trois contenus qui sont :
 
 * **platforms** : les dépendances ;
 * **system-images** : l'image Android utilisée par l'émulateur ;
 * **build-tools** : les outils de construction de l'application.
 
-Ces trois contenus seront stockés dans les répertoires respectifs `platforms`, `system-images` et `build-tools` localisé à la racine de `ANDROID_SDK_ROOT`. Il y aura autant de sous-répertoires dans ces répertoires que de niveau d'API téléchargé. Faisons le test avec le niveau de l'API intitulé `Android 30`.
+Ces trois contenus seront stockés dans les répertoires respectifs `platforms`, `system-images` et `build-tools` localisés à la racine de `ANDROID_SDK_ROOT`. Il y aura autant de sous-répertoires dans ces répertoires que de niveau d'API [Android](https://www.android.com) téléchargé. Faisons le test avec le niveau de l'API intitulé `Android 30` (version recommandée pour la suite de exercices).
 
 * Exécuter la ligne de commande suivante pour connaître les bons noms des contenus à télécharger.
 
@@ -108,7 +110,7 @@ platforms;android-30                         |  3     | Android SDK Platform 30
 system-images;android-30;google_apis;x86_64  | 10     | Google APIs Intel x86 Atom_64 System Image
 ```
 
-* Exécuter les lignes de commande ci-dessous pour télécharger tout le nécessaire de l'API 30 d'Android.
+* Exécuter les lignes de commande ci-dessous pour télécharger tout le nécessaire de l'API 30 d'[Android](https://www.android.com).
 
 ```console
 $ sdkmanager "platforms;android-30"
@@ -135,7 +137,6 @@ Installed packages:=====================] 100% Fetch remote repository...
 Si nous affichons le contenu des répertoires `platforms`, `system-images` et `build-tools` vous devriez obtenir le résultat suivant.
 
 ```console
-$ tree -L 1 platforms system-images build-tools
 platforms
 └── android-30
 system-images
@@ -144,9 +145,9 @@ build-tools
 └── 30.0.3
 ```
 
-Il ne nous reste plus qu'à apprendre à créer un émulator basé sur la version 30 de l'API Android.
+Il ne nous reste plus qu'à apprendre à créer un émulator basé sur la version 30 de l'API [Android](https://www.android.com).
 
-* Exécuter la ligne de commande suivante pour lister les périphériques préconfigurés, c'est-à-dire des profils (mémoire utilisée, taille de l'écran...) de téléphones qui existent sur le marché. Vous pouvez bien entendu créer les vôtres.
+* Exécuter la ligne de commande suivante pour lister les périphériques préconfigurés, c'est-à-dire des profils (mémoire utilisée, taille de l'écran...) de téléphones [Android](https://www.android.com) qui existent sur le marché. Vous pouvez bien entendu créer les vôtres.
 
 ```console
 $ avdmanager list device
@@ -157,7 +158,7 @@ id: 28 or "pixel_xl"
 ...
 ```
 
-* Exécuter la ligne de commande suivante pour créer un périphérique virtuel Android (AVD) basé sur le périphérique préconfiguré *pixel_xl*.
+* Exécuter la ligne de commande suivante pour créer un périphérique virtuel [Android](https://www.android.com) (AVD) basé sur le périphérique préconfiguré *pixel_xl*.
 
 ```console
 $ avdmanager create avd --name pixel_xl_30 --package "system-images;android-30;google_apis;x86_64" -d "28"
@@ -176,7 +177,7 @@ Available Android Virtual Devices:
   Sdcard: 512 MB
 ```
 
-Enfin, exécuter la ligne de commande suivante pour démarrer un émulateur basé sur cet AVD nommé *pixel_xl*.
+* Enfin, exécuter la ligne de commande suivante pour démarrer un émulateur basé sur cet AVD nommé *pixel_xl*.
 
 ```console
 $ emulator @pixel_xl_30
@@ -188,7 +189,7 @@ Afin de conserver tous les chemins configurés, veuillez indiquer à votre syst�
 
 ```console
 $ export ANDROID_SDK_ROOT=/Users/<user>/Library/Android/sdk
-$ export ANDROID_HOME=ANDROID_SDK_ROOT
+$ export ANDROID_HOME=$ANDROID_SDK_ROOT
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 ```
@@ -199,11 +200,11 @@ $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 
 #### Où sont stockées les paramètres d'un AVD ?
 
-Un répertoire _.android_ est créé dans le répertoire de l'utilisateur. Par exemple sous macOS, le dossier sera localisé dans */Users/<user>/.android/avd/<avd_name>*.
+Un répertoire _.android_ est créé dans le répertoire de l'utilisateur. Par exemple sous macOS, le dossier sera localisé dans */Users/\<user\>/.android/avd/<avd_name>*.
 
 #### Comment associer le clavier de l'ordinateur avec le clavier du périphérique virtuel ?
 
-Dans le dossier utilisé pour stocker les informations de l'AVD (sous macOS => */Users/<user>/.android/avd/<avd_name>*), un fichier *config.ini* sert à configurer le périphérique. Éditer le fichier *config.ini* et modifier le paramètre `hw.keyboard` à `yes`.
+Dans le dossier utilisé pour stocker les informations de l'AVD (sous macOS => */Users/\<user\>/.android/avd/<avd_name>*), un fichier *config.ini* sert à configurer le périphérique. Éditer le fichier *config.ini* et modifier le paramètre `hw.keyboard` à `yes`.
 
 #### Comment supprimer un AVD ?
 
@@ -269,9 +270,9 @@ accel
 
 TBA
 
-## Étapes à suivre pour installer l'environnement NativeScript
+## Étapes à suivre pour installer l'environnement NativeScript-Vue
 
-Concernant la partie JavaScript dédiée à NativeScript, l'installation est assez classique. Il faut que vous disposiez de l'outil **npm** et tout le reste se fera simplement.
+Concernant la partie JavaScript dédiée à [NativeScript-Vue](https://nativescript-vue.org/), l'installation est assez classique. Il faut que vous disposiez de l'outil **npm** et tout le reste se fera simplement.
 
 * Ouvrir un terminal, saisir la ligne de commande suivante pour s'assurer que **npm** fonctionne correctement.
 
@@ -295,6 +296,45 @@ $ npm install -g nativescript
 $ ns --version
 7.2.0
 ```
+
+* Saisir la ligne de commande suivante pour vérifier l'installation de [NativeScript](https://nativescript.org/), un rapport sera affiché.
+
+```console
+$ ns doctor
+✔ Getting environment information
+
+There seem to be issues with your configuration.
+✔ Getting NativeScript components versions information...
+✔ Component nativescript has 7.2.0 version and is up to date.
+✔ Component @nativescript/core has 7.2.1 version and is up to date.
+✖ Component @nativescript/ios is not installed.
+✖ Component @nativescript/android is not installed.
+✔ Your ANDROID_HOME environment variable is set and points to correct directory.
+✔ Your adb from the Android SDK is correctly installed.
+✔ The Android SDK is installed.
+✔ A compatible Android SDK for compilation is found.
+✔ Javac is installed and is configured properly.
+✔ The Java Development Kit (JDK) is installed and is configured properly.
+✔ CocoaPods update is not required.
+✔ Your current CocoaPods version is newer than 1.0.0.
+✔ Python installed and configured correctly.
+✔ The Python 'six' package is found.
+✖ WARNING: Xcode is not installed or is not configured properly.
+ You will not be able to build your projects for iOS or run them in the iOS Simulator.
+To be able to build for iOS and run apps in the native emulator, verify that you have installed Xcode.
+
+✖ WARNING: xcodeproj is not installed or is not configured properly.
+ You will not be able to build your projects for iOS.
+To be able to build for iOS and run apps in the native emulator, verify that you have installed xcodeproj.
+
+✖ WARNING: CocoaPods is not installed or is not configured properly.
+ You will not be able to build your projects for iOS if they contain plugin with CocoaPod file.
+To be able to build such projects, verify that you have installed CocoaPods (`sudo gem install cocoapods`).
+
+Your environment is not configured properly and you will not be able to execute local builds.
+```
+
+Le résultat de ce rapport montre que le SDK [Android](https://www.android.com) est installé, mais pas celui de iOS. Veuillez noter également l'absence du composant `@nativescript/android`. Ce dernier sera accessible quand nous aurons crée un projet [NativeScript-Vue](https://nativescript-vue.org/) et démarrer l'exécution sur [Android](https://www.android.com).
 
 * Saisir la ligne de commande suivante pour faire apparaître les nombres options proposées par [NativeScript](https://nativescript.org/).
 
@@ -326,4 +366,4 @@ $ ns --version
 ...
 ```
 
-Vous êtes prêts pour démarrer les exercices afin de développer des applications mobiles hybrides à partir de [NativeScript](https://nativescript.org/) et [Vue.js](https://vuejs.org/).
+Vous êtes prêts pour démarrer les exercices afin de développer des applications mobiles hybrides à partir de [NativeScript-Vue](https://nativescript-vue.org/).
