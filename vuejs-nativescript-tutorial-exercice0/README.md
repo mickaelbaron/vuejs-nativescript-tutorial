@@ -60,12 +60,11 @@ $ sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "platform-tools" "extras;g
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 ```
 
-Nous donnons accès aux différents outils disponibles dans les répertoires _platform-tools_ et _emulator_ en modifiant la variable d'environnement `PATH`.
+Nous donnons accès aux différents outils disponibles dans les répertoires _platform-tools_ et _emulator_ en modifiant la variable d'environnement `PATH`. 
 
-Le résultat après cette étape devra être le suivant :
+L'état du dosser `$ANDROID_SDK_ROOT` devra être le suivant :
 
 ```console
-ls $ANDROID_SDK_ROOT
 .
 ├── cmdline-tools
 ├── emulator
@@ -236,15 +235,15 @@ Dans le dossier utilisé pour stocker les informations de l'AVD (sous macOS => *
 
 #### Comment se connecter au shell d'un périphérique virtuel ou physique ?
 
-```adb -s <device_id> shell```
+```$ adb -s <device_id> shell```
 
 #### Comment télécharger un fichier d'un périphérique virtuel ou physique ?
 
-```adb -s <device_id> pull /mnt/sdcard/myfile .```
+```$ adb -s <device_id> pull /mnt/sdcard/myfile .```
 
 #### Comment envoyer un fichier vers un périphérique virtuel ou physique ?
 
-```adb -s <device_id> push myfile /mnt/sdcard```
+```$ adb -s <device_id> push myfile /mnt/sdcard```
 
 #### Comment installer l'accélération matérielle HAXM ?
 
@@ -253,7 +252,7 @@ L'installation matérielle est réalisée via Intel Hardware Accelerated Executi
 Pour vérifier que l'accélération matérielle fonctionne, exécuter la ligne de commande suivante :
 
 ```console
-emulator -accel-check
+$ emulator -accel-check
 accel:
 0
 HAXM version 7.6.5 (4) is installed and usable.
@@ -339,7 +338,7 @@ Le résultat de ce rapport montre que le SDK [Android](https://www.android.com) 
 * Saisir la ligne de commande suivante pour faire apparaître les nombres options proposées par [NativeScript](https://nativescript.org/).
 
 ```console
- ns --help
+$ ns --help
 # NativeScript CLI
 
 ┌─────────┬─────────────────────────────────────────────────────────────────────┐
