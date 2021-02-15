@@ -1,4 +1,4 @@
-# Exercice 1 : créer et exécuter son premier projet NativeScript
+# Exercice 1 : créer et exécuter son premier projet NativeScript-Vue
 
 Cet exercice s'intéresse à la création et l'exécution de votre premier projet [Vue.js](https://vuejs.org/) via le framework [NativeScript-Vue](https://nativescript-vue.org/) pour développer une application mobile hybride. Nous montrons également comment utiliser les composants graphiques spécifiques à [NativeScript-Vue](https://nativescript-vue.org/) en remplacement des composants HTML qui ne sont pas autorisés pour ce type de développement.
 

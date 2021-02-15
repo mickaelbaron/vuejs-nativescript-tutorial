@@ -366,3 +366,5 @@ $ ns --help
 ```
 
 Vous êtes prêts pour démarrer les exercices afin de développer des applications mobiles hybrides à partir de [NativeScript-Vue](https://nativescript-vue.org/).
+
+[Vue.js](https://vuejs.org/) via le framework [NativeScript-Vue](https://nativescript-vue.org/) pour développer une application mobile hybride
