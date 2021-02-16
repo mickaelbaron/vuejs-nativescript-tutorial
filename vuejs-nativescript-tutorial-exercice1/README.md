@@ -119,6 +119,8 @@ JS: Bonjour ENSMA
 JS: Bonjour ENSMA
 ```
 
+## Étapes à suivre pour utiliser l'outil VueDevTools
+
 Une application développée avec [Vue.js](https://vuejs.org/) peut être analysée par l'outil [VueDevTools](https://github.com/vuejs/vue-devtools). Cet outil permet d’introspecter les composants et d'afficher la liste des événements qui ont été émis par un composant. Dans la suite, nous allons voir comment configurer cet outil pour l'utiliser avec [NativeScript-Vue](https://nativescript-vue.org/).
 
 * Mettre fin à l'exécution de l'application (`$ ns run --device emulator-5554 android`).
@@ -149,7 +151,7 @@ Une fenêtre pour [VueDevTools](https://github.com/vuejs/vue-devtools) devrait s
 
 ![](images/vuedevtools.png)
 
-Nous allons montrer comment utiliser l'outil [VueDevTools](https://github.com/vuejs/vue-devtools) avec une application [NativeScript-Vue](https://nativescript-vue.org/). 
+## Étapes à suivre pour gérer la navigation
 
 Nous allons maintenant complexifier notre application en ajoutant une seconde page et en permettant de passer de page en page via un système de navigation. Pour rappel, [Vue Router](https://router.vuejs.org/) n'est pas supporté sur [NativeScript-Vue](https://nativescript-vue.org/), il faut donc passer par une navigation manuelle. Deux fonctions sont disponibles :
 
@@ -208,6 +210,8 @@ Pour l'option à transmettre à la méthode `onGoImagePage`, vous pouvez vous ba
 Le résultat attendu devrat être le suivant.
 
 ![](images/multipage.gif)
+
+## Étapes à suivre pour installer un APK
 
 Pour terminer, cet exercice, nous allons voir comment générer le fichier APK et l'installer avec l'outil **adb**.
 
