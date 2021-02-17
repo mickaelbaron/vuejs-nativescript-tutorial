@@ -4,7 +4,7 @@ Cet exercice de préparation de son environnement de test détaille l'installati
 
 Par ailleurs, cet exercice détaille en fin d'exercice l'installation et la configuration de l'écosystème JavaScript nécessaire pour utiliser [NativeScript](https://nativescript.org/) avec [Vue.js](https://vuejs.org/).
 
-Pour cette préparation nous utiliserons exclusivement la ligne de commande. Les avantages sont multiples. Tout d'abord, c'est maîtriser l'installation sans passer par un outil graphique qui cache toutes les étapes. Ensuite, un éditeur graphique spécialisé comme [Android Studio](https://developer.android.com/studio) n'est utile que si vous développez avec le langage cible (par exemple Java ou Kotlin pour [Android](https://www.android.com)). En effet, dans notre cas, nous utiliserons [Visual Studio Code](https://code.visualstudio.com/) pour l'édition de nos codes JavaScript. Enfin, l'installation basée sur la ligne de commande permet d'automatiser certaines procédures, ce qui n'est pas le cas avec un éditeur graphique.
+Pour cette préparation nous utiliserons exclusivement la ligne de commande. Les avantages sont multiples. Tout d'abord, vous apprendrez à maîtriser l'installation sans passer par un outil graphique qui cache toutes les étapes. Ensuite, un éditeur graphique spécialisé comme [Android Studio](https://developer.android.com/studio) n'est utile que si vous développez avec le langage cible (par exemple Java ou Kotlin pour [Android](https://www.android.com)). En effet, dans notre cas, nous utiliserons [Visual Studio Code](https://code.visualstudio.com/) pour l'édition de nos codes JavaScript. Enfin, l'installation basée sur la ligne de commande permet d'automatiser certaines procédures, ce qui n'est pas le cas avec un éditeur graphique.
 
 Dans la suite de cet exercice toutes les manipulations seront faites depuis macOS.
 
@@ -16,7 +16,7 @@ Dans la suite de cet exercice toutes les manipulations seront faites depuis macO
 * Créer une machine virtuelle iOS
 * Installer npm, VueCLI et NativeScript
 
-## Étapes à suivre pour l'environnement Android
+## Étapes à suivre pour configurer son environnement Android
 
 Les étapes suivantes montrent comment installer le SDK [Android](https://www.android.com) sans passer par [Android Studio](https://developer.android.com/studio). Nous utiliserons les outils en ligne de commande nommés « Command Line Tools » qui fournissent l'outil **sdkmanager** pour télécharger la bonne version du SDK. 
 
@@ -265,7 +265,7 @@ accel
 * https://developer.android.com/studio/run/emulator-acceleration
 * https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8
 
-## Étapes à suivre pour l'environnement iOS
+## Étapes à suivre pour configurer son environnement iOS
 
 TBA
 
@@ -366,5 +366,3 @@ $ ns --help
 ```
 
 Vous êtes prêts pour démarrer les exercices afin de développer des applications mobiles hybrides à partir de [NativeScript-Vue](https://nativescript-vue.org/).
-
-[Vue.js](https://vuejs.org/) via le framework [NativeScript-Vue](https://nativescript-vue.org/) pour développer une application mobile hybride
