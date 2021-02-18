@@ -1,4 +1,4 @@
-# Exercice 2 : Utiliser les API natives d'un dispositif mobile avec NativeScript-Vue
+# Exercice 2 : utiliser les API natives d'un dispositif mobile avec NativeScript-Vue
 
 Cet exercice s'intéresse à l'utilisation des API natives des dispositifs mobiles afin d'accéder aux données liées à l'accéléromètre, la géolocalisation et la caméra en utilisant [NativeScript-Vue](https://nativescript-vue.org/). Nous montrons également comment gérer les permissions pour autoriser l'accès à ces API natives sans explicitement le coder dans le projet [Vue.js](https://vuejs.org/). Ainsi, votre code pourra fonctionner sans problème sur [Android](https://www.android.com) et [iOS](https://www.apple.com/ios).
 
