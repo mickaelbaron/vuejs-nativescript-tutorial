@@ -55,8 +55,8 @@ L'outil **sdkmanager** est désormains disponible puisque nous l'avons ajouté d
 * Saisir les commandes suivantes pour les différents outils du SDK [Android](https://www.android.com) à savoir l'émulateur [Android](https://www.android.com) (répertoire _emulator_) et les outils pour communiquer avec les périphériques physiques et virtuels d'Android (répertoire _platform-tools_). 
 
 ```console
-$ yes | sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --licenses
-$ sdkmanager --sdk_root=${ANDROID_SDK_ROOT} --install "platform-tools" "extras;google;instantapps" "emulator"
+$ yes | sdkmanager --licenses
+$ sdkmanager --install "platform-tools" "extras;google;instantapps" "emulator"
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator
 ```
 
