@@ -71,6 +71,7 @@ $ emulator @pixel_xl_30
 * Pour exécuter le projet [NativeScript-Vue](https://nativescript-vue.org/), il ne vous reste plus qu'à exécuter la ligne de commande suivante.
 
 ```console
+$ ns clean
 $ ns run android
 ```
 

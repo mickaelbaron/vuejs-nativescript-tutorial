@@ -31,9 +31,9 @@ Comme mes expérimentations se feront sous macOS, j'utiliserai le répertoire su
 * Ouvrir un terminal, créer le répertoire du SDK et définir la variable d'environnement `ANDROID_SDK_ROOT` via les lignes de commande suivantes.
 
 ```console
-$ mkdir /Users/<user>/Library/Android/sdk
+$ mkdir -p /Users/<user>/Library/Android/sdk
 $ export ANDROID_SDK_ROOT=/Users/<user>/Library/Android/sdk
-$ export ANDROID_HOME=ANDROID_SDK_ROOT
+$ export ANDROID_HOME=$ANDROID_SDK_ROOT
 ```
 
 La variable `ANDROID_HOME` est normalement *deprecated*, elle était antérieure à `ANDROID_SDK_ROOT`. Il est quand même préférable de l'initialiser.
@@ -41,14 +41,14 @@ La variable `ANDROID_HOME` est normalement *deprecated*, elle était antérieure
 * Saisir les commandes suivantes pour télécharger les « Command Line Tools » et décompresser l'archive dans le répertoire `ANDROID_SDK_ROOT` (la version téléchargée est 6858069. Si besoin, les dernières versions sont disponibles depuis cette page https://developer.android.com/studio).
 
 ```console
-$ wget https://dl.google.com/android/repository/commandlinetools-mac-6858069_latest.zip -O $ANDROID_SDK_ROOT/clt.zip
+$ wget https://dl.google.com/android/repository/commandlinetools-mac-8092744_latest.zip -O $ANDROID_SDK_ROOT/clt.zip
 $ unzip -qq $ANDROID_SDK_ROOT/clt.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools
 $ mv $ANDROID_SDK_ROOT/cmdline-tools/cmdline-tools $ANDROID_SDK_ROOT/cmdline-tools/tools
 $ rm $ANDROID_SDK_ROOT/clt.zip
 $ export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/tools/bin
 ```
 
-> La version Linux du « Command Line Tools » est disponible ici : https://dl.google.com/android/repository/commandlinetools-win-6858069_latest.zip et celle pour la version Windows est ici : https://dl.google.com/android/repository/commandlinetools-linux-6858069_latest.zip
+> La version Linux du « Command Line Tools » est disponible ici : https://dl.google.com/android/repository/commandlinetools-win-8092744_latest.zip et celle pour la version Windows est ici : https://dl.google.com/android/repository/commandlinetools-linux-8092744_latest.zip
 
 L'outil **sdkmanager** est désormains disponible puisque nous l'avons ajouté dans la variable d'environnement `PATH` (d'autres outils seront ajoutés par la suite). Il servira à gérer la plateforme et créer les périphériques virtuels. 
 
@@ -277,7 +277,7 @@ Concernant la partie JavaScript dédiée à [NativeScript-Vue](https://nativescr
 
 ```console
 $ npm --version
-7.5.2
+7.13.0
 ```
 
 * Saisir la ligne de commande pour installer ou mettre à jour **Vue CLI**.
@@ -285,7 +285,7 @@ $ npm --version
 ```console
 $ npm install -g @vue/cli @vue/cli-init
 $ vue --version
-@vue/cli 4.5.11
+@vue/cli 4.5.15
 ```
 
 * Saisir la ligne de commande suivante pour installer **NativeScript CLI**.
@@ -293,7 +293,7 @@ $ vue --version
 ```console
 $ npm install -g nativescript
 $ ns --version
-7.2.0
+8.1.5
 ```
 
 * Saisir la ligne de commande suivante pour vérifier l'installation de [NativeScript](https://nativescript.org/), un rapport sera affiché.
