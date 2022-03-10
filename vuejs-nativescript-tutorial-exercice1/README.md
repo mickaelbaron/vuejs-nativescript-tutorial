@@ -102,7 +102,7 @@ L'application est exécutée et affichée sur le dispostif mobile. Toute modific
 $ ns run --device emulator-5554 android --no-hmr
 ```
 
-* Modifier le code du fichier _App.vue_ de façon à ajouter un bouton sur la partie basse de la page qui affichera un message (par exemple : « Bonjour ENSMA ») sur la console de votre ordinateur. Vous devrez utiliser les composants [DockerLayout](https://nativescript-vue.org/en/docs/elements/layouts/dock-layout) et [Button](https://nativescript-vue.org/en/docs/elements/components/button). 
+* Modifier le code du fichier _App.vue_ de façon à ajouter un bouton sur la partie basse de la page qui affichera un message (par exemple : « Bonjour ENSMA ») sur la console de votre ordinateur. Vous devrez utiliser les composants [DockLayout](https://nativescript-vue.org/en/docs/elements/layouts/dock-layout) et [Button](https://nativescript-vue.org/en/docs/elements/components/button). 
 
 ![](images/helloworld_button.png)
 
@@ -197,14 +197,16 @@ Nous allons maintenant complexifier notre application en ajoutant une seconde pa
 Pour l'option à transmettre à la méthode `onGoImagePage`, vous pouvez vous baser sur le code suivante.
 
 ```javascript
-{
-  transition : {
-    name: 'flip',
-    duration: 800
-  },
-  props : {
-    image: "https://i0.wp.com/bde.ensma.fr/wp-content/uploads/2019/05/ensmadehaut.jpg?fit=1000%2C667&ssl=1"
-  }
+onGoImagePage() {
+  this.$navigateTo(DisplayImage, {
+      transition : {
+      name: 'flip',
+      duration: 800
+    },
+    props : {
+      image: "https://i0.wp.com/bde.ensma.fr/wp-content/uploads/2019/05/ensmadehaut.jpg?fit=1000%2C667&ssl=1"
+    }
+  });
 }
 ```
 
